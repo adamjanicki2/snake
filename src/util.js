@@ -49,9 +49,8 @@ export const BACKGROUND_OPTIONS = [
   ["Gray", "#eee"],
 ];
 export async function saveData(key, value) {
-  const obj = { [key]: value };
-  await chrome.storage.local.set(obj);
+  localStorage.setItem(key, value);
 }
 export async function getData(key) {
-  return (await chrome.storage.local.get(key))[key];
+  return localStorage.getItem(key);
 }

@@ -1,4 +1,3 @@
-/* global chrome */
 import React from "react";
 import Game from "./Game";
 import Help from "./Help";
@@ -45,8 +44,8 @@ class Home extends React.Component {
   render() {
     return this.state.gameSettings ? (
       <div className="flex flex-column items-center justify-center">
-        <div className="flex flex-row justify-end items-center w-100">
-          <h1 className="tc f2 fw2 mv0 mr5">SnakeJS</h1>
+        <div className="flex flex-row justify-center items-center w-100">
+          <h1 className="tc f2 fw2 mv0">SnakeJS</h1>
           <div className="flex flex-row items-center justify-center">
             <IconButton
               children={<HelpIcon />}
