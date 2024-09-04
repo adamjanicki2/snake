@@ -1,30 +1,44 @@
-/* global chrome */
 export const DEFAULT_GRIDSIZE = 16;
 export const DEFAULT_SPEED = 100; // update speed in ms
 export const DEFAULT_BACKGROUND_COLOR = "#357edd";
 export const DEFAULT_SNAKE_COLOR = "#fff";
-export const DEFAULT_SETTINGS = {
+
+export type GameSettings = {
+  gridSize: number;
+  speed: number;
+  backgroundColor: string;
+  checkWalls: boolean;
+  snakeColor: string;
+};
+
+export const DEFAULT_SETTINGS: GameSettings = {
   gridSize: DEFAULT_GRIDSIZE,
   speed: DEFAULT_SPEED,
   backgroundColor: DEFAULT_BACKGROUND_COLOR,
   checkWalls: true,
   snakeColor: DEFAULT_SNAKE_COLOR,
 };
-export const SPEED_OPTIONS = [
+
+export type SpeedOption = [string, number];
+export const SPEED_OPTIONS: SpeedOption[] = [
   ["Easy", 150],
   ["Beginner", 120],
   ["Medium", 100],
   ["Hard", 80],
   ["Expert", 60],
 ];
-export const GRIDSIZE_OPTIONS = [
+
+export type GridSizeOption = [string, number];
+export const GRIDSIZE_OPTIONS: GridSizeOption[] = [
   ["Tiny", 8],
   ["Small", 12],
   ["Medium", 16],
   ["Large", 24],
   ["Massive", 32],
 ];
-export const SNAKE_OPTIONS = [
+
+export type SnakeOption = [string, string];
+export const SNAKE_OPTIONS: SnakeOption[] = [
   ["White", "#fff"],
   ["Black", "#111"],
   ["Yellow", "#ffd700"],
@@ -36,7 +50,9 @@ export const SNAKE_OPTIONS = [
   ["Blue", "#00449e"],
   ["Green", "#19a974"],
 ];
-export const BACKGROUND_OPTIONS = [
+
+export type BackgroundOption = [string, string];
+export const BACKGROUND_OPTIONS: BackgroundOption[] = [
   ["White", "#fff"],
   ["Black", "#111"],
   ["Blue", "#357edd"],
@@ -48,9 +64,11 @@ export const BACKGROUND_OPTIONS = [
   ["Pink", "#ffdfdf"],
   ["Gray", "#eee"],
 ];
-export async function saveData(key, value) {
+
+export function saveData(key: string, value: string): void {
   localStorage.setItem(key, value);
 }
-export async function getData(key) {
+
+export function getData(key: string): string | null {
   return localStorage.getItem(key);
 }
