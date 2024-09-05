@@ -9,9 +9,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 
 class Help extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Dialog open={this.props.open}>

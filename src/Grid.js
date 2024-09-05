@@ -10,17 +10,8 @@ const BLOCKSIZE_MAP = new Map([
   [24, 16],
   [32, 14],
 ]);
-const BG_MAP = new Map([
-  ["0", "bg-blue"],
-  ["a", "bg-red"],
-  ["s", "bg-white"],
-]);
 
 class Grid extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const blockSize =
       BLOCKSIZE_MAP.get(this.props.gridSize) ?? DEFAULT_BLOCKSIZE;
